@@ -16,7 +16,12 @@ import { BetterHighlightDirective } from './better-highlight/better-highlight.di
 import { UnlessDirective } from './unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { Routes, RouterModule } from '@angular/router';
 
+const appRoutes: Routes =[
+  { path: 'recipes', component: RecipeBookComponent },
+  { path: 'shoppinglist', component: ShoppingListComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +40,8 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]
