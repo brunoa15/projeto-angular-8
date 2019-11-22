@@ -17,11 +17,12 @@ import { UnlessDirective } from './unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { Routes, RouterModule } from '@angular/router';
+import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.component';
 
-const appRoutes: Routes =[
-  { path: 'recipes', component: RecipeBookComponent },
-  { path: 'shoppinglist', component: ShoppingListComponent }
-];
+// const appRoutes: Routes = [
+//   { path: 'recipes', component: RecipeBookComponent },
+//   { path: 'shoppinglist', component: ShoppingListComponent }
+// ];
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,13 +36,14 @@ const appRoutes: Routes =[
     BasicHighlightDirective,
     BetterHighlightDirective,
     UnlessDirective,
-    DropdownDirective
+    DropdownDirective,
+    RecipeStartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    // RouterModule.forRoot(appRoutes)
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]
