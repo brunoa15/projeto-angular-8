@@ -16,9 +16,9 @@ import { BetterHighlightDirective } from './better-highlight/better-highlight.di
 import { UnlessDirective } from './unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { Routes, RouterModule } from '@angular/router';
 import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
+import { RecipeService } from './recipe-book/recipe.service';
 
 // const appRoutes: Routes = [
 //   { path: 'recipes', component: RecipeBookComponent },
@@ -47,7 +47,10 @@ import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.compo
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ShoppingListService],
+  providers: [
+    ShoppingListService,
+    RecipeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
